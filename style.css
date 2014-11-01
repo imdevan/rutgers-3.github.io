@@ -8,8 +8,13 @@
 
  	-  Fun style elements to play with that won't mess with the structure of the page include color, font, and background.  When playing with colors, you can consult http://hexcolor.com/.  Colors can be specified by name ("black", "white") or hexadecimal notation (#000000, #FFFFFF).
 
+
+	Rutgers Branding Guides:
+	http://identity.rutgers.edu/about-identity/colors
 */
 
+/*Importing font for down arrow on plan div*/
+@import url('fonts/genericons/genericons.css');
 
 /* This section sets the defaults for the page, but you may never see changes here if they are overwritten by the div elements below.  */
 html, body {
@@ -19,22 +24,21 @@ html, body {
 
 body{
 	font: 130%/1.3 TrebuchetMS,Arial,sans-serif;  /* Default fonts */
+	font-weight: thin;
 	text-align: left; /* Alignment of the text */
-	color: black; /* Main text color */
+	/*color: black;  Main text color */
 	background: white; /* Main text background color */
 	padding-bottom: 20px; /* You can set padding or margin for one side of an element at a time */
 }
-
 a {                  /* A stands for link, so this section is setting the default characteristics of links. */
-	color: #0000cc;
+	/*color: #0000cc;*/
 	text-decoration: none;
 }
 
 h1 {		     /* This styles the header at the top of the page */
-	font: bold 2.1em Arial, Arial, Sans-Serif;
-	text-align: left;
+	font: 3em 'Times New Roman', Arial, Sans-Serif;
+	color: whitesmoke;
 	padding: 0;
-	color: #cc0000;
 }
 
 h2 {		     /* This styles the headers within the page */
@@ -46,42 +50,130 @@ h2 {		     /* This styles the headers within the page */
 
 /* This section alters the appearance of all divs with the class "section", which is all of the divs in our html file.  We can use it to specify style elements that we want to be the same accross divs. */
 div.section {
-	padding: 1em;
+	/*padding: 1em;*/
 	margin-bottom: 0;
+	/*margin: 3%;*/
 	text-align: justify;
-
+	display: table;
 }
-
+.section:nth-child(odd){
+	background: rgba(210,16,52,1); /*PANTONE® 186*/
+	color: #f5f5f5;
+}
+.col2{
+	float: left;
+	width: 40%;
+	margin: 5%;
+}
+.col1{
+	width: 90%;
+	height: 80%;	
+	margin: 5%;
+}
+.center{
+	text-align: center;
+}
 /* If we want the divs with ids plan and more to look the same, we can put them together */
 #plan, #more {
-	background: #d21034;
-	color: black;
 	font: Arial, Arial, Sans-Serif;
-	background-image: none;  /* replace none with url('image-url') to set a background image  */
 }
 
-/* You can alter the links within a div with the following syntax */
-#plan a {
-	color: #0000cc;
+
+#plan{
+	background-image: url('./bg.jpg');
+	background-position: center center;
+	background-size: cover;
+}
+.red-bg{
+	display: table;
+	background: rgba(210,16,52,0.75); /*PANTONE® 186*/
+	width: 100%;
+	height: 100%;
+}
+
+#plan{
+	width: 100%;
+	height: 100vh;
 }
 
 /* This alters the appearance of the div with id="signup". */
 #signup {
-	background: #white;
 	text-align: center;
+	display: none;
 }
 
 /* This alters the appearance of the div with id="whoweare" */
 #whoweare {
-	background: #e8f8f8;
 	color: black; 
 }
 
 /* This alters the appearance of the div with id="minileft", the div containing the images */
 .minileft {
-	float: left;
-	height: 100%;
+	position: absolute;
+	/*float: left;*/
+	/*height: 50%;*/
 	margin-top: 1.5em;
-	margin-right: 1em;
+	/*left: 1%;*/
+	/*display: none;*/
+}
+.minicenter{
+	width: 100%;
+	margin: 1.5% 15.5%;
+}
+.minicenter div{
+	float: left;
+	margin: 1.5%;
+	width: 20%;
+}
+.minileft img{
+	max-width:100%;
+	max-height:100%;
 }
 
+.button-wrapper{
+	width: 100%;
+	text-align: center;
+
+	margin-top: 25%;
+	margin-bottom: 5%;
+	clear: both;
+}
+.button{
+	background: rgba(210,16,52,1); /*PANTONE® 186*/
+	padding: 1em;
+	border: 2px solid white;
+	border-radius: 5px;
+	cursor: pointer;
+
+	/*Shadow*/
+	box-shadow: 0 0 1em rgba(0,0,0,0.75);
+
+	/*Transistion - makes it so that when the state changes, transitions are animated*/
+    -webkit-transition: all  0.5s ease-in-out;
+    -moz-transition: all  0.5s ease-in-out;
+    -o-transition: all  0.5s ease-in-out;
+    transition: all  0.5s ease-in-out;
+}
+
+/*Change CSS properties when the mouse is over the button*/
+.button:hover{
+	background: rgba(245,245,245,1); /*Whitesmoke*/
+	color: rgba(210,16,52,1); /*PANTONE® 186*/;
+	box-shadow: 0 0 2em rgba(0,0,0,0.75);
+}
+.bottom-center-wrapper{
+    position: absolute;	
+    bottom: 2%;
+    width: 90%;
+    text-align: center;
+    clear: both;
+}
+#down-button{
+    font-family: "Genericons";
+    font-size: 4em;
+    cursor: pointer;
+    color: whitesmoke !important;
+}
+#down-button::before{
+	content: "\f431";
+}
