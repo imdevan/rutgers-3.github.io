@@ -116,6 +116,12 @@ div.section {
 	/*left: 1%;*/
 	/*display: none;*/
 }
+.test-line{
+	position: fixed;
+	height: 100%;
+	border: 1px solid white;
+	left: 50%;
+}
 .minicenter{
 	width: 100%;
 	margin: 1.5% 15.5%;
@@ -140,7 +146,9 @@ div.section {
 }
 .button{
 	background: rgba(210,16,52,1); /*PANTONE® 186*/
+	color: whitesmoke;
 	padding: 1em;
+	display: inline-block;
 	border: 2px solid white;
 	border-radius: 5px;
 	cursor: pointer;
@@ -164,7 +172,7 @@ div.section {
 .bottom-center-wrapper{
     position: absolute;	
     bottom: 2%;
-    width: 90%;
+    width: 90.5%;
     text-align: center;
     clear: both;
 }
@@ -175,5 +183,5 @@ div.section {
     color: whitesmoke !important;
 }
 #down-button::before{
-	content: "\f431";
+	content: " \f431";
 }
